@@ -1,0 +1,173 @@
+{
+  "key": "healthcare_diagnosis",
+  "project": {
+    "name": "AI-Based Healthcare Diagnosis System",
+    "domain": "Healthcare / Clinical decision support",
+    "description": "A deep-learning decision-support tool that analyses patient records, lab results and chest X-ray images to suggest likely diagnoses (such as pneumonia, diabetes complications and cardiac conditions) to doctors in hospital outpatient departments. Doctors see a ranked list of probable conditions with confidence scores and use it as a second opinion.",
+    "data_used": "Electronic health records, laboratory values, medical imaging, demographic details (age, sex, ethnicity), prescription history",
+    "users": "Doctors, radiologists and nurses as users; patients as affected people",
+    "deployment": "Integrated into the hospital information system on the hospital's private cloud; used during consultations"
+  },
+  "risks": [
+    {
+      "title": "Unclear clinical scope and intended use",
+      "description": "The system's intended use (second opinion vs. primary diagnosis) is not clearly defined, so clinicians may over-rely on it for conditions it was never validated for.",
+      "lifecycle_stage": "Planning",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Write an intended-use statement with excluded conditions; get clinical governance sign-off; show scope limits in the UI.",
+      "stakeholder": "Clinical Lead"
+    },
+    {
+      "title": "Non-compliance with health data regulations",
+      "description": "Processing patient records without a documented legal basis or consent may violate health data protection rules such as India's DPDP Act, HIPAA or GDPR.",
+      "lifecycle_stage": "Planning",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Run a data protection impact assessment; appoint a data protection officer; document legal basis and patient consent.",
+      "stakeholder": "Data Protection Officer"
+    },
+    {
+      "title": "Dataset bias against under-represented patient groups",
+      "description": "Training data comes mostly from urban hospitals and one ethnic group, so the model may be less accurate for women, rural patients and minority groups.",
+      "lifecycle_stage": "Data Collection",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Audit demographic coverage; collect data from multiple sites; apply re-sampling and document dataset limitations in a datasheet.",
+      "stakeholder": "Data Scientist"
+    },
+    {
+      "title": "Re-identification of patients from collected records",
+      "description": "Combining age, postcode and rare diagnoses in collected records could allow individual patients to be identified if the dataset leaks.",
+      "lifecycle_stage": "Data Collection",
+      "risk_category": "Privacy",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "De-identify at source; apply k-anonymity checks; restrict access with role-based controls and audit logs.",
+      "stakeholder": "Data Protection Officer"
+    },
+    {
+      "title": "Label errors and inconsistent annotations",
+      "description": "Diagnosis labels taken from discharge summaries and radiology reports contain errors and disagreement between annotating doctors, which corrupts the ground truth.",
+      "lifecycle_stage": "Data Preparation",
+      "risk_category": "Data Quality",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Use double annotation with adjudication; measure inter-annotator agreement; clean noisy labels before training.",
+      "stakeholder": "Data Engineer"
+    },
+    {
+      "title": "Sensitive attributes leaking through features",
+      "description": "Proxy features such as hospital ID or insurance type may encode ethnicity or income and lead to biased predictions even if the attributes are removed.",
+      "lifecycle_stage": "Data Preparation",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Run proxy-variable analysis; remove or constrain proxy features; test fairness metrics by subgroup.",
+      "stakeholder": "Data Scientist"
+    },
+    {
+      "title": "Overfitting and poor generalisation across hospitals",
+      "description": "The model performs well on the development hospital's data but may fail on images from different scanners or populations.",
+      "lifecycle_stage": "Development",
+      "risk_category": "Validity and Reliability",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Use cross-site validation and regularisation; report performance with confidence intervals; hold out an external test set.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Black-box predictions that doctors cannot explain",
+      "description": "Deep-learning outputs come without reasons, so doctors cannot check whether the prediction is based on clinically meaningful findings.",
+      "lifecycle_stage": "Development",
+      "risk_category": "Transparency and Explainability",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Add saliency maps and feature-importance explanations; document the model in a model card; train clinicians on how to read the explanations.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Incorrect predictions causing missed or wrong diagnosis",
+      "description": "False negatives may delay treatment of serious disease, while false positives lead to unnecessary tests and patient anxiety.",
+      "lifecycle_stage": "Evaluation",
+      "risk_category": "Safety",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Set sensitivity targets for critical conditions; run prospective clinical validation; require clinician confirmation for every suggestion.",
+      "stakeholder": "Clinical Lead"
+    },
+    {
+      "title": "Hidden performance gaps across demographic subgroups",
+      "description": "Average accuracy hides lower accuracy for particular age, sex or ethnic groups, so the system looks safe in testing but harms some patients.",
+      "lifecycle_stage": "Evaluation",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Report metrics per subgroup; define acceptable disparity thresholds; involve independent reviewers in the evaluation.",
+      "stakeholder": "Clinical Safety Officer"
+    },
+    {
+      "title": "Cybersecurity attack on the diagnosis system",
+      "description": "Adversarial image perturbations, data poisoning or ransomware attacks could alter predictions or take the system offline during care.",
+      "lifecycle_stage": "Deployment",
+      "risk_category": "Security and Resilience",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Penetration testing; encrypted storage and transport; network segmentation; input validation and offline fallback procedures.",
+      "stakeholder": "CISO"
+    },
+    {
+      "title": "Automation bias and weak human oversight",
+      "description": "Busy doctors may accept AI suggestions without checking, so errors pass into the patient record without review.",
+      "lifecycle_stage": "Deployment",
+      "risk_category": "Accountability and Human Oversight",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Keep a human-in-the-loop sign-off; display uncertainty clearly; train doctors; log overrides and audit them regularly.",
+      "stakeholder": "Hospital Medical Director"
+    },
+    {
+      "title": "Model drift as disease patterns and equipment change",
+      "description": "New diseases, seasonal changes, updated scanners or changed coding practices cause data drift so accuracy slowly degrades after release.",
+      "lifecycle_stage": "Monitoring",
+      "risk_category": "Validity and Reliability",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Monitor input distributions and accuracy against confirmed diagnoses; set drift alerts; schedule retraining and revalidation.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Unreported incidents and no feedback loop from clinicians",
+      "description": "Wrong predictions noticed by doctors are not logged or reviewed, so recurring failures are never fixed.",
+      "lifecycle_stage": "Monitoring",
+      "risk_category": "Accountability and Human Oversight",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Provide a one-click error report; keep an incident register; review incidents monthly with the safety committee.",
+      "stakeholder": "Clinical Safety Officer"
+    },
+    {
+      "title": "Patient data retained after the system is retired",
+      "description": "Old models, logs and copies of patient data remain on servers after decommissioning, creating privacy and breach exposure.",
+      "lifecycle_stage": "Retirement",
+      "risk_category": "Privacy",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Define a retention and deletion schedule; securely wipe data and model artefacts; keep a decommissioning certificate.",
+      "stakeholder": "Data Protection Officer"
+    },
+    {
+      "title": "Abrupt withdrawal disrupts clinical workflow",
+      "description": "Doctors may depend on the tool; retiring it without notice or transition could disrupt care and lose audit history.",
+      "lifecycle_stage": "Retirement",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 2,
+      "impact": 3,
+      "mitigation": "Plan phased retirement with notice; archive audit logs; provide an alternative workflow.",
+      "stakeholder": "Hospital IT Manager"
+    }
+  ]
+}

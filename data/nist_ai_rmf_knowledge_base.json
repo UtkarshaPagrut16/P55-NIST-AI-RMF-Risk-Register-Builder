@@ -1,0 +1,531 @@
+{
+  "_meta": {
+    "description": "Local knowledge base of NIST AI RMF guidance used for Sentence-BERT semantic retrieval (U3).",
+    "primary_source": "NIST AI 100-1, Artificial Intelligence Risk Management Framework (AI RMF 1.0), January 2023, https://doi.org/10.6028/NIST.AI.100-1",
+    "secondary_source": "NIST AI 600-1, AI RMF Generative AI Profile, July 2024, https://doi.org/10.6028/NIST.AI.600-1",
+    "playbook": "NIST AI RMF Playbook, https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook",
+    "note": "Guidance text is a student paraphrase of the official subcategories, written for semantic search. Subcategory IDs and function names follow the official framework. Verify wording against the official documents before quoting."
+  },
+  "entries": [
+    {
+      "id": "GOVERN 1.1",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Legal and regulatory requirements",
+      "text": "Legal and regulatory requirements that apply to the AI system, such as privacy, anti-discrimination, health and consumer protection laws, are identified, understood, managed and documented.",
+      "reference": "NIST AI 100-1, Govern 1.1"
+    },
+    {
+      "id": "GOVERN 1.2",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Trustworthy AI in policies",
+      "text": "The characteristics of trustworthy AI such as fairness, privacy, security, transparency and accountability are built into organisational policies, processes and procedures.",
+      "reference": "NIST AI 100-1, Govern 1.2"
+    },
+    {
+      "id": "GOVERN 1.3",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Risk tolerance and management level",
+      "text": "Processes decide how much risk management effort an AI system needs based on the organisation's risk tolerance, so higher risk systems get more rigorous controls.",
+      "reference": "NIST AI 100-1, Govern 1.3"
+    },
+    {
+      "id": "GOVERN 1.4",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Transparent risk management process",
+      "text": "The risk management process and its outcomes are established through transparent policies, procedures and controls that are documented and based on organisational risk priorities.",
+      "reference": "NIST AI 100-1, Govern 1.4"
+    },
+    {
+      "id": "GOVERN 1.5",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Ongoing monitoring and review",
+      "text": "Ongoing monitoring and periodic review of the risk management process is planned, with clearly defined roles and responsibilities for who reviews and how often.",
+      "reference": "NIST AI 100-1, Govern 1.5"
+    },
+    {
+      "id": "GOVERN 1.6",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "AI system inventory",
+      "text": "Mechanisms keep an inventory of AI systems, ranked by risk, so the organisation knows which models are in use and where.",
+      "reference": "NIST AI 100-1, Govern 1.6"
+    },
+    {
+      "id": "GOVERN 1.7",
+      "function": "GOVERN",
+      "category": "GOVERN 1: Policies, processes and procedures",
+      "title": "Decommissioning and phase-out",
+      "text": "Processes and procedures exist for safely decommissioning and phasing out AI systems without creating unnecessary risk, including retiring models, archiving or deleting data and notifying users.",
+      "reference": "NIST AI 100-1, Govern 1.7"
+    },
+    {
+      "id": "GOVERN 2.1",
+      "function": "GOVERN",
+      "category": "GOVERN 2: Accountability structures",
+      "title": "Roles, responsibilities and communication lines",
+      "text": "Roles, responsibilities and lines of communication for mapping, measuring and managing AI risks are documented and clear to individuals and teams across the organisation.",
+      "reference": "NIST AI 100-1, Govern 2.1"
+    },
+    {
+      "id": "GOVERN 2.2",
+      "function": "GOVERN",
+      "category": "GOVERN 2: Accountability structures",
+      "title": "Training for AI risk management",
+      "text": "Personnel and partners receive AI risk management training so they can perform their duties consistent with organisational policies and legal obligations.",
+      "reference": "NIST AI 100-1, Govern 2.2"
+    },
+    {
+      "id": "GOVERN 2.3",
+      "function": "GOVERN",
+      "category": "GOVERN 2: Accountability structures",
+      "title": "Executive accountability",
+      "text": "Executive leadership takes responsibility for decisions about the risks of developing and deploying AI systems, so accountability is not left only to engineers.",
+      "reference": "NIST AI 100-1, Govern 2.3"
+    },
+    {
+      "id": "GOVERN 3.1",
+      "function": "GOVERN",
+      "category": "GOVERN 3: Workforce diversity and human oversight",
+      "title": "Diverse team decision-making",
+      "text": "AI risk decisions are informed by a diverse team in demographics, disciplines, experience and expertise, which helps surface bias and impacts on different communities.",
+      "reference": "NIST AI 100-1, Govern 3.1"
+    },
+    {
+      "id": "GOVERN 3.2",
+      "function": "GOVERN",
+      "category": "GOVERN 3: Workforce diversity and human oversight",
+      "title": "Human-AI oversight roles",
+      "text": "Policies and procedures define the roles and responsibilities for human oversight of AI systems, including when humans review, override or approve AI outputs and decisions.",
+      "reference": "NIST AI 100-1, Govern 3.2"
+    },
+    {
+      "id": "GOVERN 4.1",
+      "function": "GOVERN",
+      "category": "GOVERN 4: Risk culture",
+      "title": "Safety-first culture",
+      "text": "Organisational policies and practices foster a critical thinking and safety-first mindset in the design, development, deployment and use of AI, to minimise negative impacts.",
+      "reference": "NIST AI 100-1, Govern 4.1"
+    },
+    {
+      "id": "GOVERN 4.2",
+      "function": "GOVERN",
+      "category": "GOVERN 4: Risk culture",
+      "title": "Documenting risks and impacts",
+      "text": "Teams document the risks and potential impacts of the AI technology they design, develop, deploy and use, and communicate them more broadly.",
+      "reference": "NIST AI 100-1, Govern 4.2"
+    },
+    {
+      "id": "GOVERN 4.3",
+      "function": "GOVERN",
+      "category": "GOVERN 4: Risk culture",
+      "title": "Testing, incident identification and sharing",
+      "text": "Practices enable AI testing, identification of incidents and information sharing so that failures and near misses are reported and learned from.",
+      "reference": "NIST AI 100-1, Govern 4.3"
+    },
+    {
+      "id": "GOVERN 5.1",
+      "function": "GOVERN",
+      "category": "GOVERN 5: Engagement with AI actors",
+      "title": "Stakeholder feedback",
+      "text": "Policies collect, consider and integrate feedback from those external to the team that developed the AI system, such as affected communities, about potential individual and societal impacts.",
+      "reference": "NIST AI 100-1, Govern 5.1"
+    },
+    {
+      "id": "GOVERN 6.1",
+      "function": "GOVERN",
+      "category": "GOVERN 6: Third-party and supply chain risk",
+      "title": "Third-party AI risks",
+      "text": "Policies address risks arising from third-party software, data and models, including intellectual property, licensing and infringement of third-party rights.",
+      "reference": "NIST AI 100-1, Govern 6.1"
+    },
+    {
+      "id": "GOVERN 6.2",
+      "function": "GOVERN",
+      "category": "GOVERN 6: Third-party and supply chain risk",
+      "title": "Contingency for third-party failures",
+      "text": "Contingency processes handle failures or incidents in third-party data or AI systems that are deemed high-risk, so operations can continue safely.",
+      "reference": "NIST AI 100-1, Govern 6.2"
+    },
+    {
+      "id": "MAP 1.1",
+      "function": "MAP",
+      "category": "MAP 1: Context is established",
+      "title": "Intended purpose and context of use",
+      "text": "The intended purposes, potentially beneficial uses, context-specific laws, norms and expectations, and prospective settings in which the AI system will be deployed are understood and documented, including who the users and affected people are.",
+      "reference": "NIST AI 100-1, Map 1.1"
+    },
+    {
+      "id": "MAP 1.2",
+      "function": "MAP",
+      "category": "MAP 1: Context is established",
+      "title": "Interdisciplinary AI actors",
+      "text": "Interdisciplinary AI actors with diverse expertise, such as domain experts, ethicists, lawyers and affected-community representatives, take part in framing the context and identifying risks.",
+      "reference": "NIST AI 100-1, Map 1.2"
+    },
+    {
+      "id": "MAP 1.5",
+      "function": "MAP",
+      "category": "MAP 1: Context is established",
+      "title": "Organisational risk tolerances",
+      "text": "Organisational risk tolerances are determined and documented so that teams know what level of harm is acceptable for the system.",
+      "reference": "NIST AI 100-1, Map 1.5"
+    },
+    {
+      "id": "MAP 1.6",
+      "function": "MAP",
+      "category": "MAP 1: Context is established",
+      "title": "System requirements and social context",
+      "text": "System requirements such as 'the system shall respect the privacy of its users' are elicited from and understood by relevant AI actors, and design decisions take socio-technical implications into account.",
+      "reference": "NIST AI 100-1, Map 1.6"
+    },
+    {
+      "id": "MAP 2.1",
+      "function": "MAP",
+      "category": "MAP 2: Categorisation of the AI system",
+      "title": "Tasks and methods defined",
+      "text": "The specific tasks and methods used to implement the tasks the AI system will support, such as classification, generative models or recommenders, are defined.",
+      "reference": "NIST AI 100-1, Map 2.1"
+    },
+    {
+      "id": "MAP 2.2",
+      "function": "MAP",
+      "category": "MAP 2: Categorisation of the AI system",
+      "title": "Knowledge limits and human oversight",
+      "text": "Information about the AI system's knowledge limits and how system output may be utilised and overseen by humans is documented, to support better decision making by the people using it.",
+      "reference": "NIST AI 100-1, Map 2.2"
+    },
+    {
+      "id": "MAP 2.3",
+      "function": "MAP",
+      "category": "MAP 2: Categorisation of the AI system",
+      "title": "Scientific integrity, data representativeness and TEVV",
+      "text": "Scientific integrity and test, evaluation, verification and validation considerations are identified and documented, including data collection and selection, representativeness of the data, and assumptions or limits of the model.",
+      "reference": "NIST AI 100-1, Map 2.3"
+    },
+    {
+      "id": "MAP 3.1",
+      "function": "MAP",
+      "category": "MAP 3: Benefits and costs",
+      "title": "Potential benefits",
+      "text": "Potential benefits of intended AI system functionality and performance are examined and documented so they can be weighed against risks.",
+      "reference": "NIST AI 100-1, Map 3.1"
+    },
+    {
+      "id": "MAP 3.2",
+      "function": "MAP",
+      "category": "MAP 3: Benefits and costs",
+      "title": "Potential costs and harms",
+      "text": "Potential costs, including non-monetary costs, which result from expected or realised AI errors or system functionality and trustworthiness, are examined and documented.",
+      "reference": "NIST AI 100-1, Map 3.2"
+    },
+    {
+      "id": "MAP 3.5",
+      "function": "MAP",
+      "category": "MAP 3: Benefits and costs",
+      "title": "Human oversight processes defined",
+      "text": "Processes for human oversight are defined, assessed and documented in accordance with organisational policies, so people can monitor and intervene in the AI system's decisions.",
+      "reference": "NIST AI 100-1, Map 3.5"
+    },
+    {
+      "id": "MAP 4.1",
+      "function": "MAP",
+      "category": "MAP 4: Third-party components",
+      "title": "Legal and IP risks of components",
+      "text": "Approaches for mapping AI technology and legal risks of its components, including the use of third-party data or software, are in place and followed, covering intellectual property and privacy.",
+      "reference": "NIST AI 100-1, Map 4.1"
+    },
+    {
+      "id": "MAP 5.1",
+      "function": "MAP",
+      "category": "MAP 5: Impacts to people and society",
+      "title": "Likelihood and magnitude of impacts",
+      "text": "Likelihood and magnitude of each identified impact, both beneficial and harmful, based on expected use, past uses of similar AI systems and public incident reports, are identified and documented.",
+      "reference": "NIST AI 100-1, Map 5.1"
+    },
+    {
+      "id": "MAP 5.2",
+      "function": "MAP",
+      "category": "MAP 5: Impacts to people and society",
+      "title": "Engaging affected stakeholders",
+      "text": "Practices and personnel for supporting regular engagement with relevant AI actors and integrating feedback about positive, negative and unanticipated impacts are in place and documented.",
+      "reference": "NIST AI 100-1, Map 5.2"
+    },
+    {
+      "id": "MEASURE 1.1",
+      "function": "MEASURE",
+      "category": "MEASURE 1: Appropriate methods and metrics",
+      "title": "Selecting metrics for risks",
+      "text": "Approaches and metrics for measurement of AI risks enumerated during the Map function are selected for implementation, starting with the most significant risks, and any risks that cannot be measured are documented.",
+      "reference": "NIST AI 100-1, Measure 1.1"
+    },
+    {
+      "id": "MEASURE 1.3",
+      "function": "MEASURE",
+      "category": "MEASURE 1: Appropriate methods and metrics",
+      "title": "Independent assessment",
+      "text": "Internal experts who did not serve as front-line developers, and independent assessors, are involved in regular assessments and updates, so evaluation is not only done by the people who built the model.",
+      "reference": "NIST AI 100-1, Measure 1.3"
+    },
+    {
+      "id": "MEASURE 2.1",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Test sets, metrics and TEVV documentation",
+      "text": "Test sets, metrics and details about the tools used during test, evaluation, verification and validation are documented so that results can be reproduced.",
+      "reference": "NIST AI 100-1, Measure 2.1"
+    },
+    {
+      "id": "MEASURE 2.3",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Performance demonstrated under deployment conditions",
+      "text": "AI system performance or assurance criteria are measured qualitatively or quantitatively and demonstrated for conditions similar to deployment settings, with measures documented.",
+      "reference": "NIST AI 100-1, Measure 2.3"
+    },
+    {
+      "id": "MEASURE 2.4",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Production monitoring for drift",
+      "text": "The functionality and behaviour of the AI system and its components are monitored when in production, so that data drift, concept drift and performance degradation are detected.",
+      "reference": "NIST AI 100-1, Measure 2.4"
+    },
+    {
+      "id": "MEASURE 2.5",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Valid and reliable",
+      "text": "The AI system to be deployed is demonstrated to be valid and reliable, accurate and robust, and limitations of generalisability beyond the conditions under which the technology was developed are documented, including wrong predictions.",
+      "reference": "NIST AI 100-1, Measure 2.5"
+    },
+    {
+      "id": "MEASURE 2.6",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Safety evaluation",
+      "text": "The AI system is evaluated regularly for safety risks, can fail safely, and responds to unexpected inputs, with particular care where mistakes could harm people's health or life.",
+      "reference": "NIST AI 100-1, Measure 2.6"
+    },
+    {
+      "id": "MEASURE 2.7",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Security and resilience",
+      "text": "AI system security and resilience are evaluated and documented, including resistance to adversarial attacks, data poisoning, model extraction, unauthorised access and other cybersecurity threats.",
+      "reference": "NIST AI 100-1, Measure 2.7"
+    },
+    {
+      "id": "MEASURE 2.8",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Transparency and accountability risks",
+      "text": "Risks associated with transparency and accountability are examined and documented, so users and affected people can understand how and why the system makes decisions.",
+      "reference": "NIST AI 100-1, Measure 2.8"
+    },
+    {
+      "id": "MEASURE 2.9",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Explainability and interpretability",
+      "text": "The AI model is explained, validated and documented, and AI system output is interpreted within its context to inform responsible use and governance, for instance by explaining which features influenced a prediction.",
+      "reference": "NIST AI 100-1, Measure 2.9"
+    },
+    {
+      "id": "MEASURE 2.10",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Privacy risk examination",
+      "text": "Privacy risk of the AI system, such as leakage of personal or sensitive data, re-identification and data protection compliance, is examined and documented.",
+      "reference": "NIST AI 100-1, Measure 2.10"
+    },
+    {
+      "id": "MEASURE 2.11",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Fairness and bias evaluation",
+      "text": "Fairness and bias are evaluated and results documented, for example by comparing error rates and outcomes across demographic groups, to find harmful bias and discrimination in model outputs.",
+      "reference": "NIST AI 100-1, Measure 2.11"
+    },
+    {
+      "id": "MEASURE 2.13",
+      "function": "MEASURE",
+      "category": "MEASURE 2: AI systems are evaluated",
+      "title": "Effectiveness of the evaluation itself",
+      "text": "The effectiveness of the employed test, evaluation, verification and validation metrics and processes is evaluated and documented, so teams know the tests are really catching problems.",
+      "reference": "NIST AI 100-1, Measure 2.13"
+    },
+    {
+      "id": "MEASURE 3.1",
+      "function": "MEASURE",
+      "category": "MEASURE 3: Risks are tracked over time",
+      "title": "Tracking emergent risks",
+      "text": "Approaches, personnel and documentation are in place to regularly identify and track existing, unanticipated and emergent AI risks based on factors such as intended and actual performance in deployed contexts.",
+      "reference": "NIST AI 100-1, Measure 3.1"
+    },
+    {
+      "id": "MEASURE 3.3",
+      "function": "MEASURE",
+      "category": "MEASURE 3: Risks are tracked over time",
+      "title": "End-user feedback processes",
+      "text": "Feedback processes for end users and impacted communities to report problems and appeal system outcomes are established and integrated into AI system evaluation metrics.",
+      "reference": "NIST AI 100-1, Measure 3.3"
+    },
+    {
+      "id": "MEASURE 4.2",
+      "function": "MEASURE",
+      "category": "MEASURE 4: Measurement feedback",
+      "title": "Trustworthiness measurement results",
+      "text": "Measurement results regarding AI system trustworthiness in deployment context are informed by domain expert and other stakeholder consultation and documented.",
+      "reference": "NIST AI 100-1, Measure 4.2"
+    },
+    {
+      "id": "MANAGE 1.1",
+      "function": "MANAGE",
+      "category": "MANAGE 1: Risks are prioritised and responded to",
+      "title": "Does the system achieve its purpose",
+      "text": "A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.",
+      "reference": "NIST AI 100-1, Manage 1.1"
+    },
+    {
+      "id": "MANAGE 1.2",
+      "function": "MANAGE",
+      "category": "MANAGE 1: Risks are prioritised and responded to",
+      "title": "Prioritised risk treatment",
+      "text": "Treatment of documented AI risks is prioritised based on impact, likelihood and available resources, so the most severe risks are mitigated first.",
+      "reference": "NIST AI 100-1, Manage 1.2"
+    },
+    {
+      "id": "MANAGE 1.3",
+      "function": "MANAGE",
+      "category": "MANAGE 1: Risks are prioritised and responded to",
+      "title": "Responses to high-priority risks",
+      "text": "Responses to the AI risks deemed high priority are developed, planned and documented; the response options include mitigating, transferring, avoiding or accepting the risk.",
+      "reference": "NIST AI 100-1, Manage 1.3"
+    },
+    {
+      "id": "MANAGE 1.4",
+      "function": "MANAGE",
+      "category": "MANAGE 1: Risks are prioritised and responded to",
+      "title": "Residual risk documented",
+      "text": "Negative residual risks to downstream acquirers of AI systems and end users are documented after mitigation, so those who use the system know what risk remains.",
+      "reference": "NIST AI 100-1, Manage 1.4"
+    },
+    {
+      "id": "MANAGE 2.2",
+      "function": "MANAGE",
+      "category": "MANAGE 2: Strategies to maximise benefits",
+      "title": "Mechanisms to sustain value",
+      "text": "Mechanisms are in place and applied to sustain the value of deployed AI systems, such as retraining and model updates when performance degrades.",
+      "reference": "NIST AI 100-1, Manage 2.2"
+    },
+    {
+      "id": "MANAGE 2.3",
+      "function": "MANAGE",
+      "category": "MANAGE 2: Strategies to maximise benefits",
+      "title": "Responding to unknown risks",
+      "text": "Procedures are followed to respond to and recover from a previously unknown risk when it is identified, including incident response and escalation paths.",
+      "reference": "NIST AI 100-1, Manage 2.3"
+    },
+    {
+      "id": "MANAGE 2.4",
+      "function": "MANAGE",
+      "category": "MANAGE 2: Strategies to maximise benefits",
+      "title": "Supersede, disengage or deactivate",
+      "text": "Mechanisms are in place and applied, and responsibilities are assigned and understood, to supersede, disengage or deactivate AI systems that demonstrate performance or outcomes inconsistent with intended use.",
+      "reference": "NIST AI 100-1, Manage 2.4"
+    },
+    {
+      "id": "MANAGE 3.1",
+      "function": "MANAGE",
+      "category": "MANAGE 3: Third-party risks are managed",
+      "title": "Monitoring third-party AI risks",
+      "text": "AI risks and benefits from third-party resources, including vendors, pre-trained models and external data, are regularly monitored, and risk controls are applied and documented.",
+      "reference": "NIST AI 100-1, Manage 3.1"
+    },
+    {
+      "id": "MANAGE 4.1",
+      "function": "MANAGE",
+      "category": "MANAGE 4: Post-deployment risk treatment",
+      "title": "Post-deployment monitoring plans",
+      "text": "Post-deployment AI system monitoring plans are implemented, including mechanisms for capturing and evaluating input from users, appeal and override, decommissioning, incident response, recovery and change management.",
+      "reference": "NIST AI 100-1, Manage 4.1"
+    },
+    {
+      "id": "MANAGE 4.2",
+      "function": "MANAGE",
+      "category": "MANAGE 4: Post-deployment risk treatment",
+      "title": "Continual improvement",
+      "text": "Measurable activities for continual improvements are integrated into AI system updates and include regular engagement with interested parties, including relevant AI actors.",
+      "reference": "NIST AI 100-1, Manage 4.2"
+    },
+    {
+      "id": "MANAGE 4.3",
+      "function": "MANAGE",
+      "category": "MANAGE 4: Post-deployment risk treatment",
+      "title": "Incident communication",
+      "text": "Incidents and errors are communicated to relevant AI actors, including affected communities, and processes for tracking, responding to and recovering from incidents and errors are followed and documented.",
+      "reference": "NIST AI 100-1, Manage 4.3"
+    },
+    {
+      "id": "TRUST: Fair",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Fair with harmful bias managed",
+      "text": "Fairness in AI includes concerns for equality and equity by addressing harmful bias and discrimination. Systemic, computational, statistical and human-cognitive biases can all affect an AI system, and bias can exist even when a system is not intentionally discriminatory.",
+      "reference": "NIST AI 100-1, Section 3.7"
+    },
+    {
+      "id": "TRUST: Valid",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Valid and reliable",
+      "text": "Validity is confirmation, through objective evidence, that requirements for a specific intended use have been fulfilled. Reliability is the ability of the system to perform as required without failure over time. Accuracy and robustness are related measures.",
+      "reference": "NIST AI 100-1, Section 3.1"
+    },
+    {
+      "id": "TRUST: Explainable",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Explainable and interpretable",
+      "text": "Explainability refers to a representation of the mechanisms underlying AI system operation, while interpretability refers to the meaning of AI output in the context of its designed functional purpose. Together they help users and overseers understand, debug and trust the system.",
+      "reference": "NIST AI 100-1, Section 3.5"
+    },
+    {
+      "id": "TRUST: Privacy",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Privacy-enhanced",
+      "text": "Privacy refers to the norms and practices that help safeguard human autonomy, identity and dignity, through values such as anonymity, confidentiality and control. Privacy-enhancing technologies and data minimisation support privacy-enhanced AI.",
+      "reference": "NIST AI 100-1, Section 3.6"
+    },
+    {
+      "id": "TRUST: Secure",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Secure and resilient",
+      "text": "AI systems that can withstand unexpected adverse events or unexpected changes in their environment or use are resilient, and those that can maintain confidentiality, integrity and availability through protection mechanisms are secure. Attacks include data poisoning and model exfiltration.",
+      "reference": "NIST AI 100-1, Section 3.3"
+    },
+    {
+      "id": "TRUST: Accountable",
+      "function": "GOVERN",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Accountable and transparent",
+      "text": "Transparency reflects the extent to which information about an AI system and its outputs is available to the individuals interacting with it. Meaningful transparency provides access to information appropriate to the role of the person, and accountability presupposes transparency.",
+      "reference": "NIST AI 100-1, Section 3.4"
+    },
+    {
+      "id": "TRUST: Safe",
+      "function": "MEASURE",
+      "category": "Trustworthiness characteristic (AI 100-1, Section 3)",
+      "title": "Safe",
+      "text": "AI systems should not under defined conditions lead to a state in which human life, health, property or the environment is endangered. Safe operation is improved through responsible design, real-time monitoring, and the ability to shut down or intervene.",
+      "reference": "NIST AI 100-1, Section 3.2"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "key": "recruitment_screening",
+  "project": {
+    "name": "AI-Based Recruitment and Resume Screening System",
+    "domain": "Human resources / Hiring",
+    "description": "An AI system that parses resumes, extracts skills and experience, and automatically scores and ranks candidates for open job roles. Recruiters receive a ranked shortlist, and candidates scoring below a threshold are automatically rejected before any human reads their application. The company receives thousands of applications per role.",
+    "data_used": "Resumes, cover letters, past hiring decisions and performance ratings, application forms with name, gender, age, address and education",
+    "users": "Recruiters and hiring managers as users; job applicants as affected people",
+    "deployment": "Cloud SaaS integrated with the company's applicant tracking system; runs on every incoming application"
+  },
+  "risks": [
+    {
+      "title": "Hiring objectives and fairness criteria undefined",
+      "description": "The company has not defined what a fair shortlist means, so success is measured only as speed, and discrimination risks are never assessed.",
+      "lifecycle_stage": "Planning",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Define fairness objectives and acceptable-risk thresholds up front; involve HR, legal and employee representatives.",
+      "stakeholder": "HR Manager"
+    },
+    {
+      "title": "Violation of employment and anti-discrimination law",
+      "description": "Automated screening may breach equal-opportunity laws and rules on automated employment decision tools, including bias audit and notice requirements.",
+      "lifecycle_stage": "Planning",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Legal review per jurisdiction; run a bias audit before launch; provide candidate notices; maintain compliance documentation.",
+      "stakeholder": "Legal Counsel"
+    },
+    {
+      "title": "Historical hiring data encodes demographic bias",
+      "description": "Training on past hiring decisions teaches the model to repeat earlier preferences for certain genders, colleges or age groups.",
+      "lifecycle_stage": "Data Collection",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 5,
+      "impact": 5,
+      "mitigation": "Audit historical outcomes by group; rebalance or re-label data; avoid using past decisions as the only ground truth.",
+      "stakeholder": "Data Scientist"
+    },
+    {
+      "title": "Collecting more personal data than needed",
+      "description": "Collecting photos, date of birth, marital status and address without purpose creates privacy violations and discrimination risk.",
+      "lifecycle_stage": "Data Collection",
+      "risk_category": "Privacy",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Apply data minimisation; drop unnecessary fields at intake; obtain explicit candidate consent and state purpose.",
+      "stakeholder": "Data Protection Officer"
+    },
+    {
+      "title": "Resume parsing errors for non-standard formats",
+      "description": "Parsers mis-read multi-column layouts, non-English resumes or career gaps, so qualified candidates appear to lack skills.",
+      "lifecycle_stage": "Data Preparation",
+      "risk_category": "Data Quality",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Test parsers on diverse formats and languages; add human review for parse failures; track parse-quality metrics.",
+      "stakeholder": "Data Engineer"
+    },
+    {
+      "title": "Proxy features that reveal protected attributes",
+      "description": "Name, postcode, university or hobbies can act as proxies for gender, caste, religion or ethnicity and silently drive the ranking.",
+      "lifecycle_stage": "Data Preparation",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Anonymise names and photos; run proxy analysis; remove or constrain correlated features.",
+      "stakeholder": "Data Scientist"
+    },
+    {
+      "title": "Unfair candidate ranking from a biased model",
+      "description": "The ranking model gives systematically lower scores to women, older applicants or candidates from less-known institutions with equal qualifications.",
+      "lifecycle_stage": "Development",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Apply fairness-aware training or post-processing; set parity constraints; compare against a transparent baseline model.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Opaque scoring that cannot be explained to candidates",
+      "description": "Neither recruiters nor candidates can see why a score was given, which blocks challenge and breaks transparency obligations.",
+      "lifecycle_stage": "Development",
+      "risk_category": "Transparency and Explainability",
+      "likelihood": 5,
+      "impact": 4,
+      "mitigation": "Use interpretable features or SHAP explanations; produce a per-candidate reason summary; publish a model card.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Incorrect rejection of qualified candidates",
+      "description": "False negatives automatically reject strong candidates before any human sees them, harming individuals and the company's talent pool.",
+      "lifecycle_stage": "Evaluation",
+      "risk_category": "Validity and Reliability",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Measure false-rejection rate; audit a random sample of rejected applications; lower thresholds and route borderline cases to humans.",
+      "stakeholder": "HR Manager"
+    },
+    {
+      "title": "No bias audit using subgroup metrics",
+      "description": "Overall accuracy is reported but selection-rate ratios across demographic groups are never tested, hiding adverse impact.",
+      "lifecycle_stage": "Evaluation",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Compute selection-rate ratios and equal-opportunity gaps; use an independent auditor; document the results.",
+      "stakeholder": "Compliance Officer"
+    },
+    {
+      "title": "Security breach exposing applicant data",
+      "description": "Resume databases hold sensitive personal data and are attractive targets; prompt or file injection in resumes could also manipulate scores.",
+      "lifecycle_stage": "Deployment",
+      "risk_category": "Security and Resilience",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Encryption, access control and logging; sanitise uploaded files; test for adversarial resume content; vendor security review.",
+      "stakeholder": "CISO"
+    },
+    {
+      "title": "No human oversight of automated rejections",
+      "description": "Candidates are rejected without a recruiter reviewing the decision and without any appeal route, removing accountability.",
+      "lifecycle_stage": "Deployment",
+      "risk_category": "Accountability and Human Oversight",
+      "likelihood": 5,
+      "impact": 5,
+      "mitigation": "Require human review of all rejections or at least borderline ones; provide an appeal channel; record who made the final decision.",
+      "stakeholder": "Hiring Manager"
+    },
+    {
+      "title": "Candidates gaming the system with keyword stuffing",
+      "description": "Applicants learn which keywords the model rewards and add hidden text, which degrades ranking validity and disadvantages honest candidates.",
+      "lifecycle_stage": "Monitoring",
+      "risk_category": "Validity and Reliability",
+      "likelihood": 4,
+      "impact": 3,
+      "mitigation": "Detect hidden text and keyword stuffing; refresh features regularly; monitor score distributions for sudden shifts.",
+      "stakeholder": "ML Engineer"
+    },
+    {
+      "title": "Fairness drift as the applicant pool changes",
+      "description": "Changing job markets and applicant demographics shift the data so that a model that was fair at launch becomes biased later.",
+      "lifecycle_stage": "Monitoring",
+      "risk_category": "Fairness and Bias",
+      "likelihood": 4,
+      "impact": 4,
+      "mitigation": "Monthly fairness dashboard; automatic alert on selection-rate gaps; retrain with refreshed data.",
+      "stakeholder": "Compliance Officer"
+    },
+    {
+      "title": "Applicant data kept indefinitely after retirement",
+      "description": "Rejected candidates' resumes and model logs stay in storage after the tool is switched off, breaching retention limits.",
+      "lifecycle_stage": "Retirement",
+      "risk_category": "Privacy",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Apply a retention schedule; delete or anonymise applicant data; confirm deletion with the vendor in writing.",
+      "stakeholder": "Data Protection Officer"
+    },
+    {
+      "title": "Loss of decision records for later disputes",
+      "description": "Decommissioning the screening tool without archiving decisions and explanations makes it impossible to answer later discrimination complaints.",
+      "lifecycle_stage": "Retirement",
+      "risk_category": "Governance and Compliance",
+      "likelihood": 2,
+      "impact": 4,
+      "mitigation": "Archive decision logs and explanations for the legal retention period; document the model version and thresholds.",
+      "stakeholder": "Legal Counsel"
+    }
+  ]
+}
